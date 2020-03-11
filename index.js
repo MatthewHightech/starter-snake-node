@@ -27,7 +27,9 @@ app.post('/start', (request, response) => {
 
   // Response data
   const data = {
-    color: '#DFFF00',
+    color: '#F613D7',
+    headType: 'bwc-ski', 
+    tailType: 'bolt'
   }
 
   return response.json(data)
@@ -35,14 +37,24 @@ app.post('/start', (request, response) => {
 
 // Handle POST request to '/move'
 app.post('/move', (request, response) => {
-  // NOTE: Do something here to generate your move
-
-  // Response data
-  const data = {
-    move: 'up', // one of: ['up','down','left','right']
+    // NOTE: Do something here to generate your move
+    const move; 
+    // Response data
+    const up = {
+        move: 'up', // one of: ['up','down','left','right']
+    }
+    const down = {
+      move: 'down', // one of: ['up','down','left','right']
   }
+    const left = {
+       move: 'left', // one of: ['up','down','left','right']
+    }
+    const right = {
+        move: 'right', // one of: ['up','down','left','right']
+    }
 
-  return response.json(data)
+    move = left; 
+  return response.json(move)
 })
 
 app.post('/end', (request, response) => {
